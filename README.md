@@ -1,32 +1,33 @@
-# Prelude
+# Preludio
 
-> Style is what separates the good from the great. <br/>
+> Estilo es lo que separa lo bueno de lo grandioso. <br/>
 > -- Bozhidar Batsov
 
-One thing has always bothered me as Ruby developer - Python developers
-have a great programming style reference
-([PEP-8](http://www.python.org/dev/peps/pep-0008/)) and we never got
-an official guide, documenting Ruby coding style and best
-practices. And I do believe that style matters. I also believe that
-such fine fellows, like us Ruby developers, should be quite capable to
-produce this coveted document.
+Una cosa que siempre me ha disgustado como desarrollador en Ruby es que
+los desarrolladores en Python tienen una genial referencia de estilo de
+programación ([PEP-8](http://www.python.org/dev/peps/pep-0008/)) y
+nosotros nunca tuvimos una guía oficial, documentando el estilo del
+código en Ruby y las mejores practicas. Y yo creo que el estilo
+importa. También creo que tan finos compañeros, como nosotros los
+desarrolladores de Ruby, debemos ser muy capaces de producir éste
+codiciado documento.
 
-This guide started its life as our internal company Ruby coding guidelines
-(written by yours truly). At some point I decided that the work I was
-doing might be interesting to members of the Ruby community in general
-and that the world had little need for another internal company
-guideline. But the world could certainly benefit from a
-community-driven and community-sanctioned set of practices, idioms and
-style prescriptions for Ruby programming.
+Ésta guía comenzó su vida como los lineamientos internos para la
+escritura de código en Ruby de nuestra compañía (escrita por mí, con
+sinceridad). En algún punto decidí que el trabajo que estaba haciendo
+podría ser de interés para los miembros de la comunidad de Ruby en general
+y que el mundo tenia poca necesidad de otro lineamiento interno de una
+compañía. Pero el mundo ciertamente podría beneficiarse de un conjunto de
+practicas, expresiones y prescripciones de estilo para la programación en
+Ruby que es encausado y sancionado por la comunidad.
 
-Since the inception of the guide I've received a lot of feedback from
-members of the exceptional Ruby community around the world. Thanks for
-all the suggestions and the support! Together we can make a resource
-beneficial to each and every Ruby developer out there.
+Desde la concepción de la guía he recibido mucha retroalimentación por
+parte de los miembros de la excepcional comunidad de Ruby alrededor del
+mundo. ¡Gracias por su apoyo! Juntos podemos construir un recurso en
+beneficio de todos y cada uno de los desarrolladores en Ruby ahí afuera.
 
-By the way, if you're into Rails you might want to check out the
-complementary
-[Ruby on Rails 3 Style Guide](https://github.com/bbatsov/rails-style-guide).
+Por cierto, si estás trabajando con Rails tal vez te gustaría revisar la
+[Guía de estilo para Ruby on Rails 3](https://github.com/bbatsov/rails-style-guide) como complemento.
 
 # The Ruby Style Guide
 
@@ -1516,3 +1517,6 @@ doesn't know about its existence. Tweet about the guide, share it with
 your friends and colleagues. Every comment, suggestion or opinion we
 get makes the guide just a little bit better. And we want to have the
 best possible guide, don't we?
+
+Documento basado en ("The Ruby Style Guide"(https://github.com/bbatsov/ruby-style-guide)),
+escrito originalmente por Bozhidar Batsov.
