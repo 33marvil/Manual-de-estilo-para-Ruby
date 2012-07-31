@@ -3,162 +3,147 @@
 > Estilo es lo que separa lo bueno de lo grandioso. <br/>
 > -- Bozhidar Batsov
 
-Una cosa que siempre me ha disgustado como desarrollador en Ruby es que
-los desarrolladores en Python tienen una genial referencia de estilo de
-programación ([PEP-8](http://www.python.org/dev/peps/pep-0008/)) y
-nosotros nunca tuvimos una guía oficial, documentando el estilo del
-código en Ruby y las mejores practicas. Y yo creo que el estilo
-importa. También creo que tan finos compañeros, como nosotros los
-desarrolladores de Ruby, debemos ser muy capaces de producir éste
-codiciado documento.
+Una cosa que siempre me ha disgustado como desarrollador en Ruby es que los
+desarrolladores en Python tienen una genial referencia de estilo de programación
+([PEP-8](http://www.python.org/dev/peps/pep-0008/)) y nosotros nunca tuvimos una guía oficial, documentando el estilo del
+código en Ruby y las mejores practicas. Yo creo que el estilo importa. También
+creo que tan finos compañeros, como nosotros los desarrolladores de Ruby,
+debemos ser muy capaces de producir éste codiciado documento.
 
-Ésta guía comenzó su vida como los lineamientos internos para la
-escritura de código en Ruby de nuestra compañía (escrita por mí, con
-sinceridad). En algún punto decidí que el trabajo que estaba haciendo
-podría ser de interés para los miembros de la comunidad de Ruby en general
-y que el mundo tenia poca necesidad de otro lineamiento interno de una
-compañía. Pero el mundo ciertamente podría beneficiarse de un conjunto de
-practicas, expresiones y prescripciones de estilo para la programación en
-Ruby que es encausado y sancionado por la comunidad.
+Ésta guía comenzó su vida como los lineamientos internos para la escritura de
+código en Ruby de nuestra compañía (escrita por mí, con sinceridad). En algún
+punto decidí que el trabajo que estaba haciendo podría ser de interés para los
+miembros de la comunidad de Ruby en general y que el mundo tenia poca necesidad
+de otro lineamiento interno de una compañía. Pero el mundo ciertamente podría
+beneficiarse de un conjunto de practicas, expresiones y prescripciones de estilo
+para la programación en Ruby que es encausado y sancionado por la comunidad.
 
-Desde la concepción de la guía he recibido mucha retroalimentación por
-parte de los miembros de la excepcional comunidad de Ruby alrededor del
-mundo. ¡Gracias por su apoyo! Juntos podemos construir un recurso en
-beneficio de todos y cada uno de los desarrolladores en Ruby ahí afuera.
+Desde la concepción de la guía he recibido mucha retroalimentación por parte de
+los miembros de la excepcional comunidad de Ruby alrededor del mundo. ¡Gracias
+por su apoyo! Juntos podemos construir un recurso en beneficio de todos y cada
+uno de los desarrolladores en Ruby ahí afuera.
 
-Por cierto, si estás trabajando con Rails tal vez te gustaría revisar la
-[Guía de estilo para Ruby on Rails 3](https://github.com/bbatsov/rails-style-guide) como complemento.
+Por cierto, si estás trabajando con Rails tal vez te gustaría revisar la [Guía
+de estilo para Ruby on Rails 3](https://github.com/bbatsov/rails-style-guide) como complemento.
 
-# The Ruby Style Guide
+# La guía de estilo de Ruby
 
-This Ruby style guide recommends best practices so that real-world Ruby
-programmers can write code that can be maintained by other real-world Ruby
-programmers. A style guide that reflects real-world usage gets used, and a
-style guide that holds to an ideal that has been rejected by the people it is
-supposed to help risks not getting used at all &ndash; no matter how good it is.
+Ésta guía de estilo de Ruby recomienda las mejores practicas para que
+programadores de Ruby del mundo real puedan escribir código que pueda ser
+mantenido por otros programadores de Ruby en el mundo real. Una guía de estilo
+que refleja los usos en el mundo real, es utilizada, y una guía de estilo que se
+apega a un ideal que ha sido rechazado por las personas a las que se supone
+debería ayudar, se arriesga a quedar en el olvido -  sin importar que tan buena
+es.
 
-The guide is separated into several sections of related rules. I've
-tried to add the rationale behind the rules (if it's omitted I've
-assumed that is pretty obvious).
+La guía está dividida en varias secciones que agrupan convenciones relacionadas.
+He intentado agregar el razonamiento detrás de cada una de ellas (a menos que
+sea muy obvio, en cuyo caso las he omitido).
 
-I didn't come up with all the rules out of nowhere - they are mostly
-based on my extensive career as a professional software engineer,
-feedback and suggestions from members of the Ruby community and
-various highly regarded Ruby programming resources, such as
-["Programming Ruby 1.9"](http://pragprog.com/book/ruby3/programming-ruby-1-9)
-and ["The Ruby Programming Language"](http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177).
+No saque las convenciones de la nada - la mayoría están basadas en mi extensa
+carrera como ingeniero de software profesional, retroalimentación y sugerencias
+de miembros de la comunidad entorno a Ruby, así como varias fuentes que son
+altamente estimadas como recursos para la programación en Ruby, tales como
+["Programming Ruby 1.9"](http://pragprog.com/book/ruby3/programming-ruby-1-9) y
 
-The guide is still a work in progress - some rules are lacking
-examples, some rules don't have examples that illustrate them clearly
-enough. In due time these issues will be addressed - just keep them in
-mind for now.
+La guía aun es un trabajo en progreso - algunas convenciones no tienen ejemplos
+en código, otras no tienen ejemplos que lo ilustren con suficiente claridad.
+Mientras esos detalles son arreglados - sólo mantenlos en mente por ahora.
 
-You can generate a PDF or an HTML copy of this guide using
-[Transmuter](https://github.com/TechnoGate/transmuter).
+Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https://github.com/TechnoGate/transmuter).
 
-## Table of Contents
+## Tabla de contenidos
 
-* [Source Code Layout](#source-code-layout)
-* [Syntax](#syntax)
-* [Naming](#naming)
-* [Comments](#comments)
-* [Annotations](#annotations)
-* [Classes](#classes)
-* [Exceptions](#exceptions)
-* [Collections](#collections)
-* [Strings](#strings)
-* [Regular Expressions](#regular-expressions)
-* [Percent Literals](#percent-literals)
-* [Metaprogramming](#metaprogramming)
-* [Misc](#misc)
+* [Estructura del codigo](#estructura-del-codigo)
+* [Sintaxis](#sintaxis)
+* [Identificadores](#identificadores)
+* [Comentarios](#comentarios)
+* [Anotaciones](#anotaciones)
+* [Clases](#clases)
+* [Excepciones](#excepciones)
+* [Colecciones](#colecciones)
+* [Cadenas](#cadenas)
+* [Expresiones regulares](#expresiones-regulares)
+* [Literales percentiles](#literales-percentiles)
+* [Metaprogramación](#metaprogramación)
+* [Miscelaneos](#miscelaneos)
 
-## Source Code Layout
+## Estructura del codigo
 
-> Nearly everybody is convinced that every style but their own is
-> ugly and unreadable. Leave out the "but their own" and they're
-> probably right... <br/>
-> -- Jerry Coffin (on indentation)
+> Casí todos están convencidos que cada estilo a excepción del suyo es feo e
+> imposible de leer. Deja fuera el "a excepción del suyo" y probablemente tengan
+> razón... <br/>
+> -- Jerry Coffin (sobre identación)
 
-* Use `UTF-8` as the source file encoding.
-* Use two **spaces** per indentation level.
+* Usa `UTF-8` como la códificación de los archivos del código fuente.
+* Usa dos **espacios** por nivel de identación.
 
-    ```Ruby
-    # good
-    def some_method
-      do_something
-    end
-
-    # bad - four spaces
+    # no recomendado - cuatro o más espacios
     def some_method
         do_something
     end
     ```
 
-* Use Unix-style line endings. (*BSD/Solaris/Linux/OSX users are covered by default,
-  Windows users have to be extra careful.)
-    * If you're using Git you might want to add the following
-    configuration setting to protect your project from Windows line
-    endings creeping in:
+    ```Ruby
+    # recomendado
+    def some_method
+      do_something
+    end
 
-        ```$ git config --global core.autocrlf true```
+* Usa terminadores de líneas con estilo Unix (LF). Los usuarios de BSD, Solaris,
+  Linux y OSX no deben de tener problemas, pero los usuarios de Windows deben de
+  tener cuidado.)
+    * Si usas Git tal vez quisieras agregar la siguiente opción de configuración
+      para proteger tu proyecto de terminaciones de línea estilo Windows (CR+LF)
+      que pudieran colarse.
 
-* Use spaces around operators, after commas, colons and semicolons, around `{`
-  and before `}`. Whitespace might be (mostly) irrelevant to the Ruby
-  interpreter, but its proper use is the key to writing easily
-  readable code.
+      ```$ git config --global core.autocrlf true```
+
+* Usa espacios alredor de operadores (`+`, `-`, `*`, `/`), después de las comas, los
+  `:`, los `;`, alrededor de `{` y antes de `}`. El espacio en blanco puede ser
+  (en su mayoria) irrelevante, pero su uso apropiado es muy importante para
+  escribir código que se lea facilmente.
 
     ```Ruby
     sum = 1 + 2
     a, b = 1, 2
-    1 > 2 ? true : false; puts 'Hi'
+    1 > 2 ? true : false; puts 'Helo'
     [1, 2, 3].each { |e| puts e }
     ```
 
-    The only exception is when using the exponent operator:
+    La unica excepción es cuando se usa el operador para exponentes:
 
     ```Ruby
-    # bad
+    # no recomendado
     e = M * c ** 2
 
-    # good
+    # recomendado
     e = M * c**2
     ```
 
-* No spaces after `(`, `[` or before `]`, `)`.
+* No usar espacios antes de `(`, `[` o déspues de `]`, `)`.
 
     ```Ruby
     some(arg).other
     [1, 2, 3].length
     ```
 
-* Indent `when` as deep as `case`. I know that many would disagree
-  with this one, but it's the style established in both the "The Ruby
-  Programming Language" and "Programming Ruby".
+* Identa los `when` entre `case` y `end`.
 
     ```Ruby
     case
-    when song.name == 'Misty'
-      puts 'Not again!'
-    when song.duration > 120
-      puts 'Too long!'
-    when Time.now.hour > 21
-      puts "It's too late"
-    else
-      song.play
+      when song.name == 'Trololo'
+        puts 'Not again!'
+      when song.duration > 120
+        puts 'Too long!'
+      when Time.now.hour > 21
+        puts "It's too late"
+      else
+        song.play
     end
-
-    kind = case year
-           when 1850..1889 then 'Blues'
-           when 1890..1909 then 'Ragtime'
-           when 1910..1929 then 'New Orleans Jazz'
-           when 1930..1939 then 'Swing'
-           when 1940..1950 then 'Bebop'
-           else 'Jazz'
-           end
     ```
 
-* Use empty lines between `def`s and to break up a method into logical
-  paragraphs.
+* Usa lineas vacias dentro de los metodos para dividirlos en parrafos logicos.
 
     ```Ruby
     def some_method
@@ -174,113 +159,98 @@ You can generate a PDF or an HTML copy of this guide using
     end
     ```
 
-* Align the parameters of a method call if they span over multiple lines.
+* Identa y alinea los parametros de la llamada a un metodo si se extienden en
+  varias lineas.
 
     ```Ruby
-    # starting point (line is too long)
+    # no recomendado: la linea es demasiado larga
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
     end
 
-    # bad (normal indent)
+    # recomendado
     def send_mail(source)
       Mailer.deliver(
-        to: 'bob@example.com',
-        from: 'us@example.com',
+        to:      'bob@example.com',
+        from:    'us@example.com',
         subject: 'Important message',
-        body: source.text)
-    end
-
-    # bad (double indent)
-    def send_mail(source)
-      Mailer.deliver(
-          to: 'bob@example.com',
-          from: 'us@example.com',
-          subject: 'Important message',
-          body: source.text)
-    end
-
-    # good
-    def send_mail(source)
-      Mailer.deliver(to: 'bob@example.com',
-                     from: 'us@example.com',
-                     subject: 'Important message',
-                     body: source.text)
+        body:    source.text
+      )
     end
     ```
 
-* Use RDoc and its conventions for API documentation.  Don't put an
-  empty line between the comment block and the `def`.
-* Keep lines fewer than 80 characters.
-* Avoid trailing whitespace.
+* Usa RDoc y sus convenciones para documentar las APIs. No coloques una linea
+  vacia entre un comentario y una definicion.
+* Manten las lineas en un tamaño de 80 caracteres o menos.
+* Evita el uso inecesario de espacios en blanco al final de las lineas.
 
-## Syntax
+## Sintaxis
 
-* Use `def` with parentheses when there are arguments. Omit the
-  parentheses when the method doesn't accept any arguments.
+* Prefiere el uso de parentesis en la definicion de un metodo cuando éste
+  reciba argumentos.
 
-     ```Ruby
-     def some_method
-       # body omitted
-     end
+      ```Ruby
+      def some_method_with_arguments(arg1, arg2)
+        # cuerpo omitido
+      end
 
-     def some_method_with_arguments(arg1, arg2)
-       # body omitted
-     end
-     ```
+      def some_method
+        # cuerpo omitido
+      end
+      ```
 
-* Never use `for`, unless you know exactly why. Most of the time iterators
-  should be used instead. `for` is implemented in terms of `each` (so
-  you're adding a level of indirection), but with a twist - `for`
-  doesn't introduce a new scope (unlike `each`) and variables defined
-  in its block will be visible outside it.
+* Evita el uso del ciclo `for` a menos que tengas una buena razón. A diferencia
+  de los iteradores, las variables definidas dentro de `for` son visibles fuera
+  de él.
 
     ```Ruby
     arr = [1, 2, 3]
 
-    # bad
+    # no recomendado
     for elem in arr do
       puts elem
     end
 
-    # good
+    # recomendado
     arr.each { |elem| puts elem }
     ```
 
-* Never use `then` for multi-line `if/unless`.
+* Las expresiones `if x: ...`, `if x; ...`, `when x: ...` y `when x; ...` fueron
+  removidas en Ruby 1.9, por lo tanto...
+    * Utiliza el operador ternario en vez de `if x: ...`
 
     ```Ruby
-    # bad
-    if some_condition then
-      # body omitted
-    end
+    # no recomendado
+    result = if some_condition: something else something_else end
 
-    # good
-    if some_condition
-      # body omitted
-    end
-    ```
-
-* Favor the ternary operator(`?:`) over `if/then/else/end` constructs.
-  It's more common and obviously more concise.
-
-    ```Ruby
-    # bad
-    result = if some_condition then something else something_else end
-
-    # good
+    # recomendado
     result = some_condition ? something : something_else
     ```
 
-* Use one expression per branch in a ternary operator. This
-  also means that ternary operators must not be nested. Prefer
-  `if/else` constructs in these cases.
+    * Utiliza la expresión alternativa `when x then ...` en vez de `when x: ...`
+      en instrucciones de una línea.
 
     ```Ruby
-    # bad
+    genre = case year
+      when 1850..1889 then 'Blues'
+      when 1890..1909 then 'Ragtime'
+      when 1910..1929 then 'New Orleans Jazz'
+      when 1930..1939 then 'Swing'
+      when 1940..1950 then 'Bebop'
+      else 'Jazz'
+    end
+    ```
+
+* Si utilizas el operador ternario, procura sólo tener una expresion por rama.
+  Esto tambien quiere decir que debe evitarse el uso de anidaciones dentro de
+  los operadores ternarios. Tampoco lo expandas sobre varias lineas. Es
+  preferible utilizar construcciones `ìf/else` en esos casos.
+
+    ```Ruby
+    # no recomendado
     some_condition ? (nested_condition ? nested_something : nested_something_else) : something_else
 
-    # good
+    # recomendado
     if some_condition
       nested_condition ? nested_something : nested_something_else
     else
@@ -288,143 +258,117 @@ You can generate a PDF or an HTML copy of this guide using
     end
     ```
 
-* Never use `if x: ...` - it is removed in Ruby 1.9. Use
-  the ternary operator instead.
+* Procura utilizar `&&/||` para expresiones boleanas, y `and/or` para flujo de
+  control. (Regla del pulgar: Si tienes que usar parentesis, estás utilizando
+  los operadores equivocados).
 
     ```Ruby
-    # bad
-    result = if some_condition: something else something_else end
-
-    # good
-    result = some_condition ? something : something_else
-    ```
-
-* Never use `if x; ...`. Use the ternary operator instead.
-
-* Use `when x then ...` for one-line cases. The alternative syntax
-  `when x: ...` is removed in Ruby 1.9.
-
-* Never use `when x; ...`. See the previous rule.
-
-* Use `&&/||` for boolean expressions, `and/or` for control flow.  (Rule
-  of thumb: If you have to use outer parentheses, you are using the
-  wrong operators.)
-
-    ```Ruby
-    # boolean expression
+    # expresión booleana
     if some_condition && some_other_condition
       do_something
     end
 
-    # control flow
+    # flujo de control
     document.saved? or document.save!
     ```
 
-* Avoid multi-line `?:` (the ternary operator), use `if/unless` instead.
-
-* Favor modifier `if/unless` usage when you have a single-line
-  body. Another good alternative is the usage of control flow `and/or`.
+* Favorece el uso de los modificadores `if/unless` cuando tengas un cuerpo de
+  una sola línea. Otra buena alternativa es el uso de `and/or`.
 
     ```Ruby
-    # bad
+    # no recomendado
     if some_condition
       do_something
     end
 
-    # good
+    # recomendado
     do_something if some_condition
 
-    # another good option
+    # otra buena opción
     some_condition and do_something
-    ```
 
-* Favor `unless` over `if` for negative conditions (or control
-  flow `or`).
+* Favorece el uso de `unless` sobre `if` para condiciones negativas (o utiliza
+  `or`).
 
     ```Ruby
-    # bad
+    # no recomendado
     do_something if !some_condition
 
-    # good
+    # recomendado
     do_something unless some_condition
 
-    # another good option
+    # otra buena opción
     some_condition or do_something
     ```
+* Procura no usar `unless` con `else`. Reescribe la instrucción con el caso
+  positivo primero.
 
-* Never use `unless` with `else`. Rewrite these with the positive case first.
-
-    ```Ruby
-    # bad
+    # no recomendado
     unless success?
       puts 'failure'
     else
       puts 'success'
     end
 
-    # good
+    # recomendado
     if success?
       puts 'success'
     else
       puts 'failure'
     end
-    ```
 
-* Don't use parentheses around the condition of an `if/unless/while`,
-  unless the condition contains an assignment (see "Using the return
-  value of `=`" below).
+* Si la condición de un `if/unless/while` es sencilla, se lee más claro si no se
+  rodea con parentesis, a menos que la condición contenga una asignación.
 
     ```Ruby
-    # bad
+    # no recomendado
     if (x > 10)
-      # body omitted
+      # cuerpo omitido
     end
 
-    # good
+    # recomendado
     if x > 10
-      # body omitted
+      # cuerpo omitido
     end
 
-    # ok
+    # recomendado cuando hay asignaciones
     if (x = self.next_value)
-      # body omitted
+      # cuerpo omitido
     end
     ```
 
-* Favor modifier `while/until` usage when you have a single-line
-  body.
+* Favorece el uso de los modificadores `while/until` cuando tengas un cuerpo de
+  una sola línea.
 
-    ```Ruby
-    # bad
+      ```Ruby
+    # no recomendado
     while some_condition
       do_something
     end
 
-    # good
+    # recomendado
     do_something while some_condition
-    ```
 
-* Favor `until` over `while` for negative conditions.
+* Procura utilizar `until` sobre `while` para condiiones negativas.
 
     ```Ruby
-    # bad
+    # no recomendado
     do_something while !some_condition
 
-    # good
+    # recomendado
     do_something until some_condition
-    ```
 
-* Omit parentheses around parameters for methods that are part of an
-  internal DSL (e.g. Rake, Rails, RSpec), methods that are with
-  "keyword" status in Ruby (e.g. `attr_reader`, `puts`) and attribute
-  access methods. Use parentheses around the arguments of all other
-  method invocations.
+* Es mejor omitir los parentesis alrededor de parametros en métodos que
+  pertenecen un DSL interno (como Rake, Rails, RSpec...), métodos que tienen un
+  estado de "palabra clave" en Ruby (como attr_reader, puts...) y métodos de
+  acceso a atributos. De no ser así, es mejor rodear los parametros del método
+  con parentesis.
 
     ```Ruby
     class Person
       attr_reader :name, :age
 
-      # omitted
+      # omitido
     end
 
     temperance = Person.new('Temperance', 30)
@@ -435,55 +379,50 @@ You can generate a PDF or an HTML copy of this guide using
     x = Math.sin(y)
     array.delete(e)
     ```
+* Si el primer argumento de un método comienza con un parentesis abierto,
+  usa otro juego de parentesis para invocar el método. Por ejemplo, escribe
+  `f((3 + 2) + 1)`.
 
-* Prefer `{...}` over `do...end` for single-line blocks.  Avoid using
-  `{...}` for multi-line blocks (multiline chaining is always
-  ugly). Always use `do...end` for "control flow" and "method
-  definitions" (e.g. in Rakefiles and certain DSLs).  Avoid `do...end`
-  when chaining.
+* Procura no dejar espacios entre el nombre del método y el parentesis de
+  apertura.
+
+    ```Ruby
+    # no recomendado
+    f (3 + 2) + 1
+
+    # recomendado
+    f(3 + 2) + 1
+    ```
+
+* Prefiere `{...}` para bloques de una sola línea y expresiones encadenadas. Es
+  es mejor usar `do...end` para bloques de varias líneas, flujo de control y
+  definiciones de metodos. (Evita usar expresiones encadenadas en varias líneas.
+  Preguntate si no pueden ser separadas en métodos de una forma elegante).
 
     ```Ruby
     names = ['Bozhidar', 'Steve', 'Sarah']
 
-    # good
+    # recomendado
     names.each { |name| puts name }
 
-    # bad
+    # no recomendado
     names.each do |name|
       puts name
     end
 
-    # good
+    # recomendado
     names.select { |name| name.start_with?('S') }.map { |name| name.upcase }
 
-    # bad
+    # no recomendado
     names.select do |name|
       name.start_with?('S')
     end.map { |name| name.upcase }
     ```
 
-    Some will argue that multiline chaining would look OK with the use of {...}, but they should
-    ask themselves - it this code really readable and can't the blocks contents be extracted into
-    nifty methods.
-
-* Avoid `return` where not required.
+* Evita usar `self` donde no es requerido.
 
     ```Ruby
-    # bad
-    def some_method(some_arr)
-      return some_arr.size
-    end
-
-    # good
-    def some_method(some_arr)
-      some_arr.size
-    end
-    ```
-
-* Avoid `self` where not required.
-
-    ```Ruby
-    # bad
+    # no recomendado
     def ready?
       if self.last_reviewed_at > self.last_updated_at
         self.worker.update(self.content, self.options)
@@ -492,7 +431,7 @@ You can generate a PDF or an HTML copy of this guide using
       self.status == :verified
     end
 
-    # good
+    # recomendado
     def ready?
       if last_reviewed_at > last_updated_at
         worker.update(content, options)
@@ -502,26 +441,27 @@ You can generate a PDF or an HTML copy of this guide using
     end
     ```
 
-* As a corollary, avoid shadowing methods with local variables unless they are both equivalent
+* Es importante que evites hacer sombra a los métodos con variables locales a
+  menos que sean equivalentes.
 
     ```Ruby
     class Foo
       attr_accessor :options
 
-      # ok
+      # bien
       def initialize(options)
         self.options = options
-        # both options and self.options are equivalent here
+        # options y self.options son equivalentes aquí
       end
 
-      # bad
+      # no recomendado
       def do_something(options = {})
         unless options[:when] == :later
           output(self.options[:message])
         end
       end
 
-      # good
+      # recomendado
       def do_something(params = {})
         unless params[:when] == :later
           output(options[:message])
@@ -529,121 +469,95 @@ You can generate a PDF or an HTML copy of this guide using
       end
     end
 
-* Use spaces around the `=` operator when assigning default values to method parameters:
+* Mejora la legibilidad al dejar espacios alrededor del operador de asignación
+  en los valores por defecto para los parametros de un método.
 
     ```Ruby
-    # bad
+    # no recomendado
     def some_method(arg1=:default, arg2=nil, arg3=[])
       # do something...
     end
 
-    # good
+    # recomendado
     def some_method(arg1 = :default, arg2 = nil, arg3 = [])
       # do something...
     end
     ```
 
-    While several Ruby books suggest the first style, the second is much more prominent
-    in practice (and arguably a bit more readable).
-
-* Avoid line continuation (\\) where not required. In practice, avoid using
-  line continuations at all.
+* Evita las continuaciones de linea (\\) cuando no son requeridas. Es mejor si
+  estructuras tu código para evitar su uso de ser posible.
 
     ```Ruby
-    # bad
+    # no recomendado
     result = 1 - \
              2
-
-    # good (but still ugly as hell)
-    result = 1 \
-             - 2
     ```
 
-* Using the return value of `=` (an assignment) is ok, but surround the
-  assignment with parenthesis.
+* Usar el valor retornado de una asignación esta bien, pero rodea la asignación
+  con parentesis.
 
     ```Ruby
-    # good - shows intended use of assignment
-    if (v = array.grep(/foo/)) ...
-
-    # bad
+    # no recomendado
     if v = array.grep(/foo/) ...
 
-    # also good - shows intended use of assignment and has correct precedence.
+    # bien - muestra la intención de uso de la asignación
+    if (v = array.grep(/foo/)) ...
+
+    # bien - muestra el uso de la asignación y tiene una precedencia correcta
     if (v = self.next_value) == 'hello' ...
     ```
 
-* Use `||=` freely to initialize variables.
+* Está bien utilizar `||=` para inicializar variables, excepto si se trata de
+  variables booleanas. (Considera lo que puede pasar si el valor es `false`).
 
     ```Ruby
-    # set name to Bozhidar, only if it's nil or false
+    # asina Bozhidar como el nombre, sólo si es nulo o falso
     name ||= 'Bozhidar'
-    ```
 
-* Don't use `||=` to initialize boolean variables. (Consider what
-would happen if the current value happened to be `false`.)
-
-    ```Ruby
-    # bad - would set enabled to true even if it was false
+    # no recomendado - sería asignado verdadero aun si es falso
     enabled ||= true
 
-    # good
+    # recomendado
     enabled = true if enabled.nil?
     ```
 
-* Avoid using Perl-style special variables (like `$0-9`, `$``,
-  etc. ). They are quite cryptic and their use in anything but
-  one-liner scripts is discouraged.
-
-* Never put a space between a method name and the opening parenthesis.
+* Utiliza la sintaxis literal de Ruby 1.9 para los hashes. (A menos que estés
+  trabajando con una versión que no la soporte, claro). De igual forma, utiliza
+  la nueva sintaxis literal para lambda.
 
     ```Ruby
-    # bad
-    f (3 + 2) + 1
-
-    # good
-    f(3 + 2) + 1
-    ```
-
-* If the first argument to a method begins with an open parenthesis,
-  always use parentheses in the method invocation. For example, write
-`f((3 + 2) + 1)`.
-
-* Always run the Ruby interpreter with the `-w` option so it will warn
-you if you forget either of the rules above!
-
-* When the keys of your hash are symbols use the Ruby 1.9 hash literal
-syntax.
-
-    ```Ruby
-    # bad
+    # no recomendado
     hash = { :one => 1, :two => 2 }
 
-    # good
+    # recomendado
     hash = { one: 1, two: 2 }
-    ```
 
-* Use the new lambda literal syntax.
-
-    ```Ruby
-    # bad
+    # no recomendado
     lambda = lambda { |a, b| a + b }
     lambda.call(1, 2)
 
-    # good
+    # recomendado
     lambda = ->(a, b) { a + b }
     lambda.(1, 2)
     ```
 
-* Use `_` for unused block parameters.
+* Usa un guion bajo `_` para los parametros no usados en un bloque.
 
     ```Ruby
-    # bad
+    # no recomendado
     result = hash.map { |k, v| v + 1 }
 
-    # good
+    # recomendado
     result = hash.map { |_, v| v + 1 }
     ```
+
+* Evita utilizar las variables especiales estilo Perl (como `$0-9`, `$``, etc).
+  Son bastante cripticas y su uso fuera de scripts de una sola línea no es bien
+  visto.
+
+* Para recordar algunas de las recomendaciones sobre la sintaxis del código,
+  ejecuta el interprete con la opción `-w`. Así generara advertencias cuando
+  encuentre alguna practica no recomendada.
 
 ## Naming
 
