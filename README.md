@@ -78,17 +78,17 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
 * Usa `UTF-8` como la códificación de los archivos del código fuente.
 * Usa dos **espacios** por nivel de identación.
 
+    ```Ruby
     # no recomendado - cuatro o más espacios
     def some_method
         do_something
     end
-    ```
 
-    ```Ruby
     # recomendado
     def some_method
       do_something
     end
+    ```
 
 * Usa terminadores de líneas con estilo Unix (LF). Los usuarios de BSD, Solaris,
   Linux y OSX no deben de tener problemas, pero los usuarios de Windows deben de
@@ -286,6 +286,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
 
     # otra buena opción
     some_condition and do_something
+    ```
 
 * Favorece el uso de `unless` sobre `if` para condiciones negativas (o utiliza
   `or`).
@@ -303,6 +304,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
 * Procura no usar `unless` con `else`. Reescribe la instrucción con el caso
   positivo primero.
 
+    ```Ruby
     # no recomendado
     unless success?
       puts 'failure'
@@ -316,6 +318,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     else
       puts 'failure'
     end
+    ```
 
 * Si la condición de un `if/unless/while` es sencilla, se lee más claro si no se
   rodea con parentesis, a menos que la condición contenga una asignación.
@@ -348,6 +351,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
 
     # recomendado
     do_something while some_condition
+    ```
 
 * Procura utilizar `until` sobre `while` para condiiones negativas.
 
@@ -357,6 +361,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
 
     # recomendado
     do_something until some_condition
+    ```
 
 * Es mejor omitir los parentesis alrededor de parametros en métodos que
   pertenecen un DSL interno (como Rake, Rails, RSpec...), métodos que tienen un
@@ -468,6 +473,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
         end
       end
     end
+    ```
 
 * Mejora la legibilidad al dejar espacios alrededor del operador de asignación
   en los valores por defecto para los parametros de un método.
