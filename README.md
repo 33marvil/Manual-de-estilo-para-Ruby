@@ -50,11 +50,11 @@ La guía aun es un trabajo en progreso - algunas convenciones no tienen ejemplos
 en código, otras no tienen ejemplos que lo ilustren con suficiente claridad.
 Mientras esos detalles son arreglados - sólo mantenlos en mente por ahora.
 
-Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https://github.com/TechnoGate/transmuter).
+Puedes generar una copia en PDF o HTML de está guía usando [Transmuter](https://github.com/TechnoGate/transmuter).
 
 ## Tabla de contenidos
 
-* [Estructura del codigo](#estructura-del-codigo)
+* [Estructura del código](#estructura-del-código)
 * [Sintaxis](#sintaxis)
 * [Identificadores](#identificadores)
 * [Comentarios](#comentarios)
@@ -66,16 +66,16 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
 * [Expresiones regulares](#expresiones-regulares)
 * [Literales percentiles](#literales-percentiles)
 * [Metaprogramación](#metaprogramación)
-* [Miscelaneos](#miscelaneos)
+* [Misceláneos](#misceláneos)
 
-## Estructura del codigo
+## Estructura del código
 
-> Casí todos están convencidos que cada estilo a excepción del suyo es feo e
+> Casi todos están convencidos de que cada estilo a excepción del suyo es feo e
 > imposible de leer. Deja fuera el "a excepción del suyo" y probablemente tengan
 > razón... <br/>
 > -- Jerry Coffin (sobre identación)
 
-* Usa `UTF-8` como la códificación de los archivos del código fuente.
+* Usa `UTF-8` como la codificación de los archivos del código fuente.
 * Usa dos **espacios** por nivel de identación.
 
     ```Ruby
@@ -99,10 +99,10 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
 
       ```$ git config --global core.autocrlf true```
 
-* Usa espacios alredor de operadores (`+`, `-`, `*`, `/`), después de las comas, los
+* Usa espacios alrededor de operadores (`+`, `-`, `*`, `/`), después de las comas, los
   `:`, los `;`, alrededor de `{` y antes de `}`. El espacio en blanco puede ser
-  (en su mayoria) irrelevante, pero su uso apropiado es muy importante para
-  escribir código que se lea facilmente.
+  (en su mayoría) irrelevante, pero su uso apropiado es muy importante para
+  escribir código que se lea fácilmente.
 
     ```Ruby
     sum = 1 + 2
@@ -111,7 +111,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     [1, 2, 3].each { |e| puts e }
     ```
 
-    La unica excepción es cuando se usa el operador para exponentes:
+    La única excepción es cuando se usa el operador para exponentes:
 
     ```Ruby
     # no recomendado
@@ -121,7 +121,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     e = M * c**2
     ```
 
-* No usar espacios antes de `(`, `[` o déspues de `]`, `)`.
+* No usar espacios antes de `(`, `[` o después de `]`, `)`.
 
     ```Ruby
     some(arg).other
@@ -143,7 +143,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     end
     ```
 
-* Usa lineas vacias dentro de los metodos para dividirlos en parrafos logicos.
+* Usa lineas vacías dentro de los métodos para dividirlos en párrafos lógicos.
 
     ```Ruby
     def some_method
@@ -159,7 +159,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     end
     ```
 
-* Identa y alinea los parametros de la llamada a un metodo si se extienden en
+* Identa y alinea los parámetros de la llamada a un método si se extienden en
   varias lineas.
 
     ```Ruby
@@ -180,13 +180,13 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     ```
 
 * Usa RDoc y sus convenciones para documentar las APIs. No coloques una linea
-  vacia entre un comentario y una definicion.
-* Manten las lineas en un tamaño de 80 caracteres o menos.
-* Evita el uso inecesario de espacios en blanco al final de las lineas.
+  vacía entre un comentario y una definición.
+* Mantén las lineas en un tamaño de 80 caracteres o menos.
+* Evita el uso innecesario de espacios en blanco al final de las lineas.
 
 ## Sintaxis
 
-* Prefiere el uso de parentesis en la definicion de un metodo cuando éste
+* Prefiere el uso de paréntesis en la definición de un método cuando éste
   reciba argumentos.
 
       ```Ruby
@@ -241,8 +241,8 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     end
     ```
 
-* Si utilizas el operador ternario, procura sólo tener una expresion por rama.
-  Esto tambien quiere decir que debe evitarse el uso de anidaciones dentro de
+* Si utilizas el operador ternario, procura sólo tener una expresión por rama.
+  Esto también quiere decir que debe evitarse el uso de anidaciones dentro de
   los operadores ternarios. Tampoco lo expandas sobre varias lineas. Es
   preferible utilizar construcciones `ìf/else` en esos casos.
 
@@ -258,8 +258,8 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     end
     ```
 
-* Procura utilizar `&&/||` para expresiones boleanas, y `and/or` para flujo de
-  control. (Regla del pulgar: Si tienes que usar parentesis, estás utilizando
+* Procura utilizar `&&/||` para expresiones booleanas, y `and/or` para flujo de
+  control. (Regla del pulgar: Si tienes que usar paréntesis, estás utilizando
   los operadores equivocados).
 
     ```Ruby
@@ -301,6 +301,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     # otra buena opción
     some_condition or do_something
     ```
+
 * Procura no usar `unless` con `else`. Reescribe la instrucción con el caso
   positivo primero.
 
@@ -321,7 +322,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     ```
 
 * Si la condición de un `if/unless/while` es sencilla, se lee más claro si no se
-  rodea con parentesis, a menos que la condición contenga una asignación.
+  rodea con paréntesis, a menos que la condición contenga una asignación.
 
     ```Ruby
     # no recomendado
@@ -353,7 +354,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     do_something while some_condition
     ```
 
-* Procura utilizar `until` sobre `while` para condiiones negativas.
+* Procura utilizar `until` sobre `while` para condiciones negativas.
 
     ```Ruby
     # no recomendado
@@ -363,11 +364,11 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     do_something until some_condition
     ```
 
-* Es mejor omitir los parentesis alrededor de parametros en métodos que
+* Es mejor omitir los paréntesis alrededor de parámetros en métodos que
   pertenecen un DSL interno (como Rake, Rails, RSpec...), métodos que tienen un
   estado de "palabra clave" en Ruby (como attr_reader, puts...) y métodos de
-  acceso a atributos. De no ser así, es mejor rodear los parametros del método
-  con parentesis.
+  acceso a atributos. De no ser así, es mejor rodear los parámetros del método
+  con paréntesis.
 
     ```Ruby
     class Person
@@ -384,11 +385,11 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     x = Math.sin(y)
     array.delete(e)
     ```
-* Si el primer argumento de un método comienza con un parentesis abierto,
-  usa otro juego de parentesis para invocar el método. Por ejemplo, escribe
+* Si el primer argumento de un método comienza con un paréntesis abierto,
+  usa otro juego de paréntesis para invocar el método. Por ejemplo, escribe
   `f((3 + 2) + 1)`.
 
-* Procura no dejar espacios entre el nombre del método y el parentesis de
+* Procura no dejar espacios entre el nombre del método y el paréntesis de
   apertura.
 
     ```Ruby
@@ -401,8 +402,8 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
 
 * Prefiere `{...}` para bloques de una sola línea y expresiones encadenadas. Es
   es mejor usar `do...end` para bloques de varias líneas, flujo de control y
-  definiciones de metodos. (Evita usar expresiones encadenadas en varias líneas.
-  Preguntate si no pueden ser separadas en métodos de una forma elegante).
+  definiciones de métodos. (Evita usar expresiones encadenadas en varias líneas.
+  Pregúntate si no pueden ser separadas en métodos de una forma elegante).
 
     ```Ruby
     names = ['Bozhidar', 'Steve', 'Sarah']
@@ -476,7 +477,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     ```
 
 * Mejora la legibilidad al dejar espacios alrededor del operador de asignación
-  en los valores por defecto para los parametros de un método.
+  en los valores por defecto para los parámetros de un método.
 
     ```Ruby
     # no recomendado
@@ -500,7 +501,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     ```
 
 * Usar el valor retornado de una asignación esta bien, pero rodea la asignación
-  con parentesis.
+  con paréntesis.
 
     ```Ruby
     # no recomendado
@@ -547,7 +548,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     lambda.(1, 2)
     ```
 
-* Usa un guion bajo `_` para los parametros no usados en un bloque.
+* Usa un guión bajo `_` para los parámetros no usados en un bloque.
 
     ```Ruby
     # no recomendado
@@ -558,7 +559,7 @@ Puedés generar una copia en PDF o HTML de está guía usando [Transmuter](https
     ```
 
 * Evita utilizar las variables especiales estilo Perl (como `$0-9`, `$``, etc).
-  Son bastante cripticas y su uso fuera de scripts de una sola línea no es bien
+  Son bastante crípticas y su uso fuera de scripts de una sola línea no es bien
   visto.
 
 * Para recordar algunas de las recomendaciones sobre la sintaxis del código,
