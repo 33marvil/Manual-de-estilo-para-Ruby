@@ -99,9 +99,9 @@ Puedes generar una copia en PDF o HTML de está guía usando [Transmuter](https:
 
       ```$ git config --global core.autocrlf true```
 
-* Usa espacios alrededor de operadores (`+`, `-`, `*`, `/`), después de las comas, los
-  `:`, los `;`, alrededor de `{` y antes de `}`. El espacio en blanco puede ser
-  (en su mayoría) irrelevante, pero su uso apropiado es muy importante para
+* Usa espacios alrededor de operadores (`+`, `-`, `*`, `/`), después de las comas,
+  los `:`, los `;`, alrededor de `{` y antes de `}`. El espacio en blanco puede
+  ser (en su mayoría) irrelevante, pero su uso apropiado es muy importante para
   escribir código que se lea fácilmente.
 
     ```Ruby
@@ -566,37 +566,38 @@ Puedes generar una copia en PDF o HTML de está guía usando [Transmuter](https:
   ejecuta el interprete con la opción `-w`. Así generara advertencias cuando
   encuentre alguna practica no recomendada.
 
-## Naming
+## Identificadores
 
-> The only real difficulties in programming are cache invalidation and
-> naming things. <br/>
+> Las únicas dificultades reales al programar son la validación del cache y el
+> nombrar cosas. <br/>
 > -- Phil Karlton
 
-* Use `snake_case` for methods and variables.
-* Use `CamelCase` for classes and modules.  (Keep acronyms like HTTP,
-  RFC, XML uppercase.)
-* Use `SCREAMING_SNAKE_CASE` for other constants.
-* The names of predicate methods (methods that return a boolean value)
-  should end in a question mark.
-  (i.e. `Array#empty?`).
-* The names of potentially "dangerous" methods (i.e. methods that modify `self` or the
-  arguments, `exit!` (doesn't run the finalizers like `exit` does), etc.) should end with an exclamation mark if
-  there exists a safe version of that *dangerous* method.
+* Utiliza `snake_case` para métodos y variables.
+* Utiliza `CamelCase` para clases y módulos. (Deja en mayúsculas los acrónimos
+  como HTTP, RFC y XML).
+* Utiliza `SCREAMING_SNAKE_CASE` para otras constantes.
+* Los nombres de métodos predicados (métodos que devuelven un valor booleano)
+  deben terminar con un signo de interrogación: `?`
+  (por ejemplo `Array#empty?`).
+* Los nombres de métodos potencialmente peligrosos (por ejemplo, métodos que
+  modifican los argumentos o `self`, que no ejecutan los terminadores como lo
+  hace `exit`, etc.) deben terminar con una marca de exclamación `!` si existe
+  una versión segura de ese método *peligroso*.
 
     ```Ruby
-    # bad - there is not matching 'safe' method
+    # no recomendado - no hay una versión segura del método
     class Person
       def update!
       end
     end
 
-    # good
+    # bien
     class Person
       def update
       end
     end
 
-    # good
+    # recomendado
     class Person
       def update!
       end
@@ -606,8 +607,7 @@ Puedes generar una copia en PDF o HTML de está guía usando [Transmuter](https:
     end
     ```
 
-* Define the non-bang (safe) method in terms of the bang (dangerous)
-  one if possible.
+* Define el método seguro en términos del método peligroso cuando sea posible.
 
     ```Ruby
     class Array
@@ -627,23 +627,18 @@ Puedes generar una copia en PDF o HTML de está guía usando [Transmuter](https:
     end
     ```
 
-* When using `reduce` with short blocks, name the arguments `|a, e|`
-  (accumulator, element).
-* When defining binary operators, name the argument `other`.
+* Cuando uses `reduce` en bloques cortos, nombra los argumentos como `|a, e|`
+  (acumulador, elemento).
+* Cuando definas operadores binarios, nombra el argumento como `other`.
 
     ```Ruby
     def +(other)
-      # body omitted
+      # cuerpo omitido
     end
     ```
 
-* Prefer `map` over `collect`, `find` over `detect`, `select` over
-  `find_all`, `reduce` over `inject` and `size` over `length`. This is
-  not a hard requirement; if the use of the alias enhances
-  readability, it's ok to use it. The rhyming methods are inherited from
-  Smalltalk and are not common in other programming languages. The
-  reason the use of `select` is encouraged over `find_all` is that it
-  goes together nicely with `reject` and its name is pretty self-explanatory.
+* Prefiere `map` sobre `collect`, `find` sobre `detect`, `select` sobre `find_all`,
+  `reduce` sobre `inject` y `size` sobre `length`. Escribirás menos. :-)
 
 ## Comments
 
