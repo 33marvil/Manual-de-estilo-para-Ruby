@@ -344,7 +344,7 @@ Puedes generar una copia en PDF o HTML de está guía usando [Transmuter](https:
 * Favorece el uso de los modificadores `while/until` cuando tengas un cuerpo de
   una sola línea.
 
-      ```Ruby
+    ```Ruby
     # no recomendado
     while some_condition
       do_something
