@@ -1,27 +1,39 @@
+
 # Preludio
 
-> Estilo es lo que separa lo bueno de lo grandioso. <br/>
-> -- Bozhidar Batsov
+> Los ejemplos a seguir son importantes.
+> -- Oficial Alex J. Murphy, _RoboCop_
 
-Una cosa que siempre me ha disgustado como desarrollador en Ruby es que los desarrolladores en Python tienen una genial referencia de estilo de programación ([PEP-8](http://www.python.org/dev/peps/pep-0008/)) y nosotros nunca tuvimos una guía oficial, documentando el estilo del código en Ruby y las mejores practicas. Yo creo que el estilo importa. También creo que tan finos compañeros, como nosotros los desarrolladores de Ruby, debemos ser muy capaces de producir éste codiciado documento.
+Una cosa que siempre me ha molestado como desarrollador en Ruby es, que los desarrolladores en Python tienen una genial referencia de estilo para programar (la [PEP-8][1]), y nosotros, los que desarrollamos en Ruby, nunca hemos tenido una guía oficial que documente el estilo del código y las mejores practicas de los programas escritos. Yo creo que el estilo importa. También creo que tan finos compañeros, como somos nosotros, debemos ser muy capaces de producir éste documento tan necesario.
 
-Ésta guía comenzó su vida como los lineamientos internos para la escritura de código en Ruby de nuestra compañía (escrita por mí, con sinceridad). En algún punto decidí que el trabajo que estaba haciendo podría ser de interés para los miembros de la comunidad de Ruby en general y que el mundo tenia poca necesidad de otro lineamiento interno de una compañía. Pero el mundo ciertamente podría beneficiarse de un conjunto de practicas, expresiones y prescripciones de estilo para la programación en Ruby que es encausado y sancionado por la comunidad.
+Ésta guía comenzó su vida como los lineamientos internos para la escritura de código en Ruby de nuestra compañía (escrita por mí, con sinceridad). En algún punto decidí que el trabajo que estaba haciendo podría ser de interés para los miembros de la comunidad de Ruby en general y aunque el mundo tenia poca necesidad de otro lineamiento interno, bien podría beneficiarse de un conjunto de practicas, expresiones y sugerencias de estilo para la programación en Ruby que es encausado y sancionado por la comunidad.
 
-Desde la concepción de la guía he recibido mucha retroalimentación por parte de los miembros de la excepcional comunidad de Ruby alrededor del mundo. ¡Gracias por su apoyo! Juntos podemos construir un recurso en beneficio de todos y cada uno de los desarrolladores en Ruby ahí afuera.
+Desde la concepción de la guía he recibido bastante retroalimentación por parte de los miembros de la excepcional comunidad de Ruby alrededor del mundo. ¡Gracias por su apoyo! Juntos podemos construir un recurso en beneficio de todos y cada uno de los desarrolladores en Ruby ahí afuera.
 
-Por cierto, si estás trabajando con Rails tal vez te gustaría revisar la [Guía de estilo para Ruby on Rails 3](https://github.com/bbatsov/rails-style-guide) como complemento.
+Por cierto, si estás trabajando con Rails tal vez te gustaría revisar la [Guía de estilo para Ruby on Rails 3 & 4](https://github.com/bbatsov/rails-style-guide) como complemento.
 
-# La guía de estilo de Ruby
+# La guía de estilo para Ruby
 
-Ésta guía de estilo de Ruby recomienda las mejores practicas para que programadores de Ruby del mundo real puedan escribir código que pueda ser mantenido por otros programadores de Ruby en el mundo real. Una guía de estilo que refleja los usos en el mundo real, es utilizada, y una guía de estilo que se apega a un ideal que ha sido rechazado por las personas a las que se supone debería ayudar, se arriesga a quedar en el olvido -  sin importar que tan buena es.
+Ésta guía de estilo de Ruby recomienda buenas practicas para que programadores de Ruby del mundo real puedan escribir código que pueda ser mantenido por otros programadores de Ruby en el mundo real. Una guía de estilo que refleja los usos en el mundo real, es utilizada, y una guía de estilo que se apega a un ideal que ha sido rechazado por las personas a las que se supone debería ayudar, se arriesga a quedar en el olvido &ndash; sin importar que tan buena es.
 
 La guía está dividida en varias secciones que agrupan convenciones relacionadas. He intentado agregar el razonamiento detrás de cada una de ellas (a menos que sea muy obvio, en cuyo caso las he omitido).
 
-No saque las convenciones de la nada - la mayoría están basadas en mi extensa carrera como ingeniero de software profesional, retroalimentación y sugerencias de miembros de la comunidad entorno a Ruby, así como varias fuentes que son altamente estimadas como recursos para la programación en Ruby, tales como ["Programming Ruby 1.9"](http://pragprog.com/book/ruby3/programming-ruby-1-9) y
+Las convenciones no aparecieron de la nada &ndash; la mayoría tienen como base mi extensa experiencia como ingeniero de software profesional, la retroalimentación y las sugerencias de miembros de la comunidad entorno a Ruby, así como varias fuentes que son altamente estimadas como recursos para la programación en Ruby, tales como «[Programming Ruby 1.9][2]» y «[The Ruby Programming Language][3]».
 
-La guía aun es un trabajo en progreso - algunas convenciones no tienen ejemplos en código, otras no tienen ejemplos que lo ilustren con suficiente claridad. Mientras esos detalles son arreglados - sólo mantenlos en mente por ahora.
+Hay algunas áreas en las que no hay un consenso dentro de la comunidad de Ruby respecto a un estilo en particular (como el entrecomillado de cadenas de texto, los espacios al definir diccionarios, la posición del punto cuando se ocupan varias líneas al encadenar métodos, etc.). En tales casos, se recopilan los estilos populares y queda a tu elección el aplicar uno de ellos de forma consistente.
 
-Puedes generar una copia en PDF o HTML de está guía usando [Transmuter](https://github.com/TechnoGate/transmuter).
+La guía aun es un trabajo en progreso - algunas convenciones no tienen ejemplos de código, otras no tienen ejemplos que las ilustren con suficiente claridad. Mientras esos detalles son arreglados - sólo tenlos en mente por ahora.
+
+Puedes generar una copia en PDF o HTML de está guía usando [Transmuter][4] y encontrarás la versión original en inglés en [éste repositorio][5]. También, puedes revisar tus programas usando [RuboCop][6], un analizador de código escrito en Ruby, basado en ésta guía de estilo.
+
+Traducciones de ésta guía están disponibles en los siguientes lenguajes:
+
+* 简体中文 ([Chino Simplificado][7])
+* 簡體中文 ([Chino Tradicional][8])
+* Français ([Frances][9])
+* 日本語 ([Japones][10])
+* Português ([Portugues][11])
+* Tiếng Việt ([Vietnamita][12])
 
 ## Tabla de contenidos
 
@@ -559,3 +571,21 @@ Puedes generar una copia en PDF o HTML de está guía usando [Transmuter](https:
   ```
 
 * Prefiere `map` sobre `collect`, `find` sobre `detect`, `select` sobre `find_all`, `reduce` sobre `inject` y `size` sobre `length`. Escribirás menos. :-)
+
+
+----------
+
+
+  [1]: http://www.python.org/dev/peps/pep-0008/
+  [2]: http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0
+  [3]: http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177
+  [4]: https://github.com/TechnoGate/transmuter
+  [5]: https://github.com/bbatsov/ruby-style-guide
+  [6]: https://github.com/bbatsov/rubocop
+  [7]: https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md
+  [8]: https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhTW.md
+  [9]: https://github.com/porecreat/ruby-style-guide/blob/master/README-frFR.md
+  [10]: https://github.com/fortissimo1997/ruby-style-guide/blob/japanese/README.ja.md
+  [11]: https://github.com/rubensmabueno/ruby-style-guide/blob/master/README-PT-BR.md
+  [12]: https://github.com/scrum2b/ruby-style-guide/blob/master/README-viVN.md
+
